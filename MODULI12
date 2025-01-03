@@ -1,0 +1,11 @@
+#include <iostream>
+#include "play.h"
+#include "choise_color.h"
+char board[9] = { '-', '-', '-', '-', '-', '-', '-', '-', '-' }; // Массив поля
+
+int main() {
+
+    choiseColor();// Можно менять цвет
+    play();
+    return 0;
+}

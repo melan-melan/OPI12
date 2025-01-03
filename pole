@@ -1,0 +1,12 @@
+#pragma once
+#include <iostream>
+using namespace std;
+
+extern char board[9]; // Объявляем массив поля
+
+void print_board() {
+    cout << "Игровое поле\n";
+    cout << "-" << board[0] << "-|-" << board[1] << "-|-" << board[2] << "-\n";
+    cout << "-" << board[3] << "-|-" << board[4] << "-|-" << board[5] << "-\n";
+    cout << "-" << board[6] << "-|-" << board[7] << "-|-" << board[8] << "-\n";
+}

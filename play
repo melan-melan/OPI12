@@ -1,0 +1,39 @@
+#pragma once
+#include "has_won.h"
+#include "print_board.h"
+#include "get_move.h"
+
+char play() {
+    char player = 'X';
+    bool step = true;
+    int turn = 0;
+
+    while (!has_won('X') && !has_won('O') && turn < 9) {
+        player = step ? 'X' : 'O';
+        step = !step;
+        int move = get_move(player);
+
+        if (turn % 2 == 0) {
+            board[move - 1] = 'X';
+            if (has_won('X')) {
+                cout << "Выиграл игрок 'X'!\n";
+                print_board();
+                return 'X';
+            }
+        }
+        else {
+            board[move - 1] = 'O';
+            if (has_won('O')) {
+                cout << "Выиграл игрок 'O'!\n";
+                print_board();
+                return 'O';
+            }
+        }
+
+        turn++;
+    }
+
+    print_board();
+    cout << "Ничья :(\n";
+    return 'D';
+}

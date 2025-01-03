@@ -1,0 +1,31 @@
+#pragma once
+#include <iostream>
+
+using namespace std;
+
+void choiseColor() {
+	int system_color=-1;
+	setlocale(LC_ALL, "ru");
+	cout << "какое оформление хотите выбрать?:\n"
+		<< "светлая тема - 1\n"
+		<< "темная тема  - 2\n"
+		<< "милая тема - 3\n"
+		<< "морская тема- 4\n"
+		<< "вампирская тема- 5\n"
+		<< "пчелиная тема- 6\n"
+		<< "перейти к игре- 0\n";
+	while (system_color != 0 ) {
+		cin >> system_color;
+			switch (system_color) {
+			case 0:break;
+			case 1: system("color F0"); break;
+			case 2: system("color 0F"); break;
+			case 3: system("color 5F"); break;
+			case 4: system("color 1A"); break;
+			case 5: system("color 04"); break;
+			case 6: system("color 60"); break;
+			default: std::cout << "введите корректное значение ";
+			}
+		
+	}
+}
